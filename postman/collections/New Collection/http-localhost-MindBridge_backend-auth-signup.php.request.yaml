@@ -1,0 +1,17 @@
+$kind: http-request
+name: http://localhost/MindBridge_backend/auth/signup.php
+description: ""
+url: http://localhost/MindBridge_backend/auth/signup.php
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Farhana\",\r
+
+    \  \"email\": \"farhana@gmail.com\",\r
+
+    \  \"password\": \"farhana12\"\r
+
+    }"
+order: 2000

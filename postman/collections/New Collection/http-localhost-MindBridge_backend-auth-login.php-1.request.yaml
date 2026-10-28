@@ -1,0 +1,19 @@
+$kind: http-request
+name: http://localhost/MindBridge_backend/auth/login.php
+description: ""
+url: http://localhost/MindBridge_backend/auth/login.php
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"farhana@gmail.com\",\r
+
+    \  \"password\": \"farhana12\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: http://localhost/MindBridge_backend/profile/profile_fetch.php
+order: 3000
