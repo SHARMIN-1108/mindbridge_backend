@@ -1,4 +1,3 @@
-
 <?php
 require_once __DIR__ . '/../config/config.php';
 
@@ -57,9 +56,16 @@ try {
         ':password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
 
+    $newUserId = (int) $pdo->lastInsertId();
+
     sendJson(201, [
         'success' => true,
-        'message' => 'Account created successfully'
+        'message' => 'Account created successfully',
+        'user' => [
+            'id' => $newUserId,
+            'name' => $name,
+            'email' => $email
+        ]
     ]);
 } catch (PDOException $e) {
     if ($e->getCode() === '23000') {
